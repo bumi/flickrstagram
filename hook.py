@@ -11,7 +11,7 @@ from flask import Flask, abort, request, flash, redirect, render_template, url_f
 app = Flask(__name__)
 
 @app.route('/ping')
-def ping:
+def ping():
     return "hello"
 
 @app.route('/flickrstragram', methods=['GET','POST'])
