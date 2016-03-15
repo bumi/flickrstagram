@@ -19,7 +19,7 @@ This little flask application exposes an `/flickrstagram` endpoint that accepts 
 Once received a request the image is processed using [imgix](https://imgix.com/) (you need an account there) to do some [smart cropping](https://docs.imgix.com/apis/url/size/crop) to 1280x1280 pixel which is required by instagram.   
 Then the image is uploaded to your instagram using [lukecyca](http://github.com/lukecyca)'s reveres engeneered [instagram python script](https://github.com/lukecyca/python-instagram-upload)
 
-### Instalation
+### Installation
 
     $ pip install -r requirements.txt
     $ [ENV VARS] python hook.py
