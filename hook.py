@@ -21,7 +21,7 @@ def flickrstagram():
     caption = data['caption']
 
     auth_key = os.environ.get('AUTH', None)
-    if(auth_key is not None && ( 'auth' not in data or data['auth'] != os.environ.get('AUTH', ''))):
+    if(auth_key is not None and ( 'auth' not in data or data['auth'] != os.environ.get('AUTH', ''))):
         return "NO"
 
     insta = InstagramSession()
@@ -46,4 +46,4 @@ def flickrstagram():
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True)
+    app.run(port=port,debug=True)
