@@ -19,6 +19,10 @@ def flickrstragram():
     data = json.loads(request.data)
     url = data['source']
     caption = data['flickr']
+
+    if('auth' not in data or data['auth'] != os.environ.get('AUTH', '')):
+        return "NO"
+
     insta = InstagramSession()
 
     builder = imgix.UrlBuilder(os.environ.get('IMGIX_HOST', ''), sign_key=os.environ.get('IMGIX_SIGN_KEY', ''))
@@ -41,4 +45,4 @@ def flickrstragram():
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
-    app.run(port=port)
+    app.run(debug=True)
