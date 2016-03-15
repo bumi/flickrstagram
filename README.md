@@ -38,6 +38,12 @@ the app can be configured using the following environment variables
 
 Simply push to heroku and set your configuration variables. 
 
+
+### Thanks
+
+thanks to [lukecyca](https://github.com/lukecyca) for the [python script](https://github.com/lukecyca/python-instagram-upload) to do the heavy uploading to instagram.
+
+
 -----
 
 Contact: hello@michaelbumann.com   
