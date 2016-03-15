@@ -14,13 +14,14 @@ app = Flask(__name__)
 def ping():
     return "hello"
 
-@app.route('/flickrstragram', methods=['GET','POST'])
-def flickrstragram():
+@app.route('/flickrstagram', methods=['GET','POST'])
+def flickrstagram():
     data = json.loads(request.data)
     url = data['source']
-    caption = data['flickr']
+    caption = data['caption']
 
-    if('auth' not in data or data['auth'] != os.environ.get('AUTH', '')):
+    auth_key = os.environ.get('AUTH', None)
+    if(auth_key is not None && ( 'auth' not in data or data['auth'] != os.environ.get('AUTH', ''))):
         return "NO"
 
     insta = InstagramSession()
