@@ -1,1 +1,1 @@
-python hook.py
+web: python hook.py
