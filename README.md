@@ -11,7 +11,7 @@ This little flask application exposes an `/flickrstagram` endpoint that accepts 
 ```json
     {
       "source": "your image URL",
-      "caption: "the caption of your image",
+      "caption": "the caption of your image",
       "auth": "optional auth code, see configuration"
     }
 ```
