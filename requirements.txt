@@ -2,3 +2,4 @@ imgix==1.0.0
 flask==0.10.1
 gunicorn==19.4.5
 gevent==1.1.0
+requests==2.9.0
