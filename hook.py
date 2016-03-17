@@ -18,11 +18,15 @@ def ping():
 def flickrstagram():
     print request.data
     data = json.loads(request.data)
+    print data
     url = data['source']
+    print url
     caption = data['caption']
+    print caption
 
     auth_key = os.environ.get('AUTH', None)
     if(auth_key is not None and ( 'auth' not in data or data['auth'] != os.environ.get('AUTH', ''))):
+        print auth_key
         return "NO"
 
     insta = InstagramSession()
@@ -47,4 +51,4 @@ def flickrstagram():
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
-    app.run(port=port)
+    app.run(port=port, debug=True)
