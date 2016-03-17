@@ -17,7 +17,12 @@ def ping():
 @app.route('/flickrstagram', methods=['GET','POST'])
 def flickrstagram():
     print request.data
-    data = json.loads(request.data)
+    try:
+        data = json.loads(request.data)
+    except Exception as e:
+        print "error"
+        print e
+        return "fail"
     print data
     url = data['source']
     print url
@@ -34,6 +39,7 @@ def flickrstagram():
     builder = imgix.UrlBuilder(os.environ.get('IMGIX_HOST', ''), sign_key=os.environ.get('IMGIX_SIGN_KEY', ''))
     photo = builder.create_url(url, {'w': 1280, 'h': 1280, 'fit': 'crop', 'crop': 'entropy', 'auto': 'enchance'})
     print "downloading"
+    print photo
     urllib.urlretrieve(photo, 'tmp/image.jpg')
 
     print "uploading"
