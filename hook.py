@@ -16,6 +16,7 @@ def ping():
 
 @app.route('/flickrstagram', methods=['GET','POST'])
 def flickrstagram():
+    print request.data
     data = json.loads(request.data)
     url = data['source']
     caption = data['caption']
