@@ -27,7 +27,6 @@ def flickrstagram():
     url = data['source']
     print url
     caption = data['caption']
-    print caption
 
     auth_key = os.environ.get('AUTH', None)
     if(auth_key is not None and ( 'auth' not in data or data['auth'] != os.environ.get('AUTH', ''))):
