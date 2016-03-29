@@ -23,7 +23,6 @@ def flickrstagram():
         print "error"
         print e
         return "fail"
-    print data
     url = data['source']
     print url
     caption = data['caption']
